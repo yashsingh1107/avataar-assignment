@@ -53,7 +53,7 @@ li {
 .dropdown-list {
   list-style: none;
   position: absolute;
-  top: calc(100% + 40px); /* Adjust the top position to place it below the nav bar */
+  top: calc(100% + 40px); /* Adjusting the top position to place it below the nav bar */
   left: 0;
   background-color: #2F302C;
   color: #fff;
@@ -61,17 +61,17 @@ li {
   margin: 0px;
   border-radius: 10px;
   display: none;
-  width: 190px; /* Set a width for the dropdown list */
+  width: 190px; /* Setting a width for the dropdown list */
   height: 260px;
-  z-index: 3; /* Ensure the dropdown is on top of other elements */
+  z-index: 3; /* Ensuring the dropdown is on top of other elements with highest z-index */
 }
 
 .dropdown-list li {
   margin-bottom: 20px;
-  transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
+  transition: background-color 0.3s, color 0.3s; /* Adding transition for color change */
   padding: 7px;
-  width: 100%; /* Ensure the item takes up the entire width */
-  box-sizing: border-box; /* Include padding in the element's total width */
+  width: 100%; /* Ensuring the item takes up the entire width */
+  box-sizing: border-box; /* Including padding in the element's total width */
 }
 
 .dropdown-list.visible {
@@ -79,15 +79,15 @@ li {
 }
 
 .dropdown-list li:hover {
-  background-color: white; /* Change background color on hover */
-  color: black; /* Change text color to black on hover */
+  background-color: white; /* Changing background color on hover */
+  color: black; /* Changing text color to black on hover */
 }
 
-/* Add this style for the tick icon */
+/*styles for the tick icon */
 .tick-icon {
   position: absolute;
   top: 50%;
-  right: 10px; /* Adjust the right position as needed */
+  right: 10px; /* Adjusting the right position as needed */
   transform: translateY(-50%);
   display: none;
   color: green; /* Set the color of the tick */
@@ -105,14 +105,14 @@ li {
 }
 
 .search-icon {
-  margin-right: 10px; /* Adjust the margin to add space between the icon and the search box */
+  margin-right: 10px; /* Adjusting the margin to add space between the icon and the search box */
 }
 
 .search-box {
-  padding: 8px; /* Adjust the padding for the search box */
+  padding: 8px; /* Adjusted the padding for the search box */
   width: 100%;
-  background-color: transparent; /* Remove the background color */
-  border: none; /* Remove the border */
+  background-color: transparent; /* Removed the background color */
+  border: none; /* Removed the border */
   outline: none;
   color: #fff;
   font-size: 14px;
@@ -138,7 +138,7 @@ li {
 .logo-text {
   font-size: 18px;
   padding-left: 10px;
-  padding-right: 0px; /* Adjust the padding to increase space to the right of "E-COMM" text */
+  padding-right: 0px; /* Adjusting the padding to increase space to the right of "E-COMM" text */
   font-weight: bold;
   font-size: 25px;
 }

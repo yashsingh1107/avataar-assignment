@@ -28,7 +28,7 @@
   .central-card {
     width: 500px;
     height: 300px;
-    z-index: 2; /* Higher z-index for the central card */
+    z-index: 2; /* Higher z-index than subframes for the central card */
     
   }
   
@@ -61,7 +61,7 @@
     height: 140px;
   }
   
-  /* Add new styles for buttons */
+  /* styles for buttons */
   .navigation-buttons {
     position: absolute;
     bottom: 20px;
@@ -73,12 +73,12 @@
     gap: 10px;
   }
   
-  /* Reset spacing between buttons */
+  /* spacing between buttons */
   .navigation-buttons button {
     margin: 0;
   }
   
-  /* Arrow buttons */
+  /* styles for arrow buttons */
   .arrow-button {
     width: 30px;
     height: 30px;
@@ -96,7 +96,7 @@
     background-image: url('./images/arrowRight.png');
   }
   
-  /* Dot indicators */
+  /*  styles for dot indicators */
   .dot-indicator {
     width: 12px;
     height: 12px;

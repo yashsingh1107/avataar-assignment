@@ -4,12 +4,11 @@ import CarouselCard from './CarouselCard';
 import './Carousel.css';
 
 const Carousel = () => {
-  const img1 =
-    "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGFlc3RoZXRpYyUyMGltYWdlcyUyMHdpdGglMjAlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D"; //pen
-  const img2 = "https://images.unsplash.com/photo-1542435503-956c469947f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWxlY3Ryb25pY3MlMjB3aXRoJTIwd2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww"; //desk
+  const img1 = "https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RXhxdWlzaXRlJTIwU3RhdGlvbmFyeSUyMFV0aWxpdGllc3xlbnwwfHwwfHx8MA%3D%3D"; //pen
+  const img2 = "https://images.unsplash.com/photo-1458560871784-56d23406c091?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c291bCUyMGVucmljaGluZyUyMG11c2ljfGVufDB8fDB8fHww"; //music
   const img3 = "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b2ZmaWNlfGVufDB8fDB8fHww"; //good-view
-  const img4 = "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGVza3xlbnwwfHwwfHx8MA%3D%3D"; //dim light
-  const img5 = "https://soltech.com/cdn/shop/articles/Photo-Courtesy-of-The-Spruce_600x.jpg?v=1652284445"; //plant
+  const img4 = "https://images.unsplash.com/photo-1519664699825-ddb2c64076bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmZlc3Npb25hbCUyMG11c2ljYWwlMjBlcXVpcGVtZW50fGVufDB8fDB8fHww"; //music-instrument
+  const img5 = "https://images.unsplash.com/photo-1525513688408-aef73a11a340?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1hY2tib29rfGVufDB8fDB8fHww"; //gadgets
 
   const [currentCard, setCurrentCard] = useState(1);
 
@@ -39,15 +38,15 @@ const Carousel = () => {
   const getImageData = (cardNumber) => {
     switch (cardNumber) {
       case 1:
-        return { imageUrl: img1, title: 'Custom Title 1' };
+        return { imageUrl: img1, title: 'Exquisite Stationary Utilities' };
       case 2:
-        return { imageUrl: img2, title: 'Custom Title 2' };
+        return { imageUrl: img2, title: 'Soul Enriching music' };
       case 3:
-        return { imageUrl: img3, title: 'Custom Title 3' };
+        return { imageUrl: img3, title: 'Modern Work Desks' };
       case 4:
-        return { imageUrl: img4, title: 'Custom Title 4' };
+        return { imageUrl: img4, title: 'Professional Music Equipment' };
       case 5:
-        return { imageUrl: img5, title: 'Custom Title 5' };
+        return { imageUrl: img5, title: 'High-Performance Gadgets' };
       default:
         return { imageUrl: img1, title: 'Default Title' };
     }
