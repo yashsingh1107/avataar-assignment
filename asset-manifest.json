@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/avataar-assignment/static/css/main.10d559d8.css",
+    "main.js": "/avataar-assignment/static/js/main.e6886fb0.js",
+    "static/js/787.62a1464b.chunk.js": "/avataar-assignment/static/js/787.62a1464b.chunk.js",
+    "index.html": "/avataar-assignment/index.html",
+    "main.10d559d8.css.map": "/avataar-assignment/static/css/main.10d559d8.css.map",
+    "main.e6886fb0.js.map": "/avataar-assignment/static/js/main.e6886fb0.js.map",
+    "787.62a1464b.chunk.js.map": "/avataar-assignment/static/js/787.62a1464b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10d559d8.css",
+    "static/js/main.e6886fb0.js"
+  ]
+}
