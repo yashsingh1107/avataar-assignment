@@ -1,0 +1,42 @@
+/* Frame.css */
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 106px;
+    width: 985.34px;
+    position: absolute;
+    top: 32%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering trick */
+    gap: 32px;
+    background-color: #fff;
+  }
+  
+  .text-1,
+  .text-2 {
+    text-align: center;
+    padding: 10px; /* Adjust padding as needed */
+    width: 100%; /* Set width to 100% to fill the container */
+    box-sizing: border-box; /* Include padding in the element's total width */
+  }
+  
+  .text-1 {
+    height: 42px;
+    font-family: Helvetica;
+    font-weight: 650;
+    font-size: 64px;
+    line-height: 42px;
+    color: #231f20;
+  }
+  
+  .text-2 {
+    height: 32px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #231f20;
+  }
+  

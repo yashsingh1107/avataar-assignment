@@ -1,0 +1,113 @@
+/* Carousel.css */
+
+.carousel-frame {
+    width: 1534px;
+    height: 300px;
+    top: 205px;
+    margin: 20px auto;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .central-card,
+  .subframe-1,
+  .subframe-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .central-card {
+    width: 500px;
+    height: 300px;
+    z-index: 2; /* Higher z-index for the central card */
+    
+  }
+  
+  .subframe-1,
+  .subframe-2 {
+    width: 1000px;
+    height: 200px;
+  }
+  
+  .subframe-1 {
+    z-index: 1;
+  }
+  
+  .subframe-2 {
+    width: 1400px;
+    height: 140px;
+    z-index: 0;
+  }
+  
+  .card-container-left,
+  .card-container-right {
+    width: 380px;
+    height: 200px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .subframe-2 .card-container-left,
+  .subframe-2 .card-container-right {
+    width: 220px;
+    height: 140px;
+  }
+  
+  /* Add new styles for buttons */
+  .navigation-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Reset spacing between buttons */
+  .navigation-buttons button {
+    margin: 0;
+  }
+  
+  /* Arrow buttons */
+  .arrow-button {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .arrow-button.left {
+    background-image: url('./images/arrowLeft.png');
+  }
+  
+  .arrow-button.right {
+    background-image: url('./images/arrowRight.png');
+  }
+  
+  /* Dot indicators */
+  .dot-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .dot-indicator.active {
+    background-color: #333;
+  }
+  

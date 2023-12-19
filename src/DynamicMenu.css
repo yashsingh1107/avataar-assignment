@@ -1,0 +1,155 @@
+/* DynamicMenu.css */
+
+.dynamic-menu {
+  background-color: #2F302C;
+  padding: 15px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2F302C;
+  color: #fff;
+  padding: 15px;
+}
+
+.items {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0; /* Remove default margin */
+  margin-right: auto;
+}
+
+li {
+  margin-right: 40px; /* Adjust the margin to increase space between menu items */
+}
+
+.menu-container {
+  /* ... (your existing styles) */
+  position: relative;
+}
+
+.dropdown-container {
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+  margin-right: 50px;
+}
+
+.dropdown-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-left: 5px;
+}
+
+.dropdown-list {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 40px); /* Adjust the top position to place it below the nav bar */
+  left: 0;
+  background-color: #2F302C;
+  color: #fff;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 10px;
+  display: none;
+  width: 190px; /* Set a width for the dropdown list */
+  height: 260px;
+  z-index: 3; /* Ensure the dropdown is on top of other elements */
+}
+
+.dropdown-list li {
+  margin-bottom: 20px;
+  transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
+  padding: 7px;
+  width: 100%; /* Ensure the item takes up the entire width */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.dropdown-list.visible {
+  display: block;
+}
+
+.dropdown-list li:hover {
+  background-color: white; /* Change background color on hover */
+  color: black; /* Change text color to black on hover */
+}
+
+/* Add this style for the tick icon */
+.tick-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust the right position as needed */
+  transform: translateY(-50%);
+  display: none;
+  color: green; /* Set the color of the tick */
+}
+
+.dropdown-list-item.selected .tick-icon {
+  display: inline-block;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  border-bottom: 1px solid #fff;
+}
+
+.search-icon {
+  margin-right: 10px; /* Adjust the margin to add space between the icon and the search box */
+}
+
+.search-box {
+  padding: 8px; /* Adjust the padding for the search box */
+  width: 100%;
+  background-color: transparent; /* Remove the background color */
+  border: none; /* Remove the border */
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  opacity: 70%;
+}
+
+.search-box::placeholder {
+  color: #fff;
+}
+
+.logo {
+  width: 25px;
+  height: 22px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.logo-text {
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 0px; /* Adjust the padding to increase space to the right of "E-COMM" text */
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .dynamic-menu {
+    width: 100%;
+  }
+}
