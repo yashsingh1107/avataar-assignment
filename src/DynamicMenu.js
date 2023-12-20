@@ -1,21 +1,26 @@
-// DynamicMenu.js
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import './DynamicMenu.css';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Icon } from '@iconify/react';
+import './DynamicMenu.css';
 
 const DynamicMenu = () => {
-  const menuItems = ['HOME', 'ELECTRONICS', 'BOOKS', 'MUSIC', 'MOVIES', 'CLOTHING', 'GAMES'];
-  const moreOptions = ['FURNITURE', 'ELECTRONICS', 'TRAVEL', 'BOTANICAL', 'CATEGORY NAME'];
+  const menuItems = useMemo(
+    () => ['HOME', 'ELECTRONICS', 'BOOKS', 'MUSIC', 'MOVIES', 'CLOTHING', 'GAMES'],
+    []
+  );
+
+  const moreOptions = useMemo(
+    () => ['FURNITURE', 'ELECTRONICS', 'TRAVEL', 'BOTANICAL', 'CATEGORY NAME'],
+    []
+  );
+
   const [openMoreOptions, setOpenMoreOptions] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  //to make the dropdown list visible.
-  const toggleMoreOptions = (item) => {
+  const toggleMoreOptions = useCallback((item) => {
     setOpenMoreOptions((prevOpen) => !prevOpen);
     setSelectedItem(item);
-  };
+  }, []);
 
-  // to make the dropdown list disappear when clicked anywhere on screen.
   const dropdownRef = useRef(null);
 
   const closeDropdownOnOutsideClick = useCallback(
@@ -24,8 +29,49 @@ const DynamicMenu = () => {
         setOpenMoreOptions(false);
       }
     },
-    [openMoreOptions, dropdownRef]
+    [openMoreOptions]
   );
+
+  useEffect(() => {
+    const updateMenuForSmallScreens = () => {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth <= 768) {
+        // Clear the existing items in the dropdown list
+        const dropdownList = document.querySelector('.dropdown-list');
+        while (dropdownList.firstChild) {
+          dropdownList.removeChild(dropdownList.firstChild);
+        }
+
+        // Render menu items and more options in the dropdown list for small screens
+        const itemsToRender = [...menuItems, ...moreOptions];
+        itemsToRender.forEach((item, index) => {
+          const listItem = document.createElement('li');
+          listItem.innerText = item;
+          listItem.addEventListener('click', () => toggleMoreOptions(item));
+          listItem.classList.add('dropdown-list-item');
+          listItem.classList.toggle('selected', selectedItem === item);
+
+          if (selectedItem === item) {
+            const tickIcon = document.createElement('span');
+            tickIcon.innerText = '✔'; 
+            tickIcon.classList.add('tick-icon');
+            listItem.appendChild(tickIcon);
+          }
+
+          dropdownList.appendChild(listItem);
+        });
+      }
+    };
+
+    updateMenuForSmallScreens();
+
+    window.addEventListener('resize', updateMenuForSmallScreens);
+
+    return () => {
+      window.removeEventListener('resize', updateMenuForSmallScreens);
+    };
+  }, [menuItems, moreOptions, selectedItem, toggleMoreOptions]);
 
   useEffect(() => {
     document.addEventListener('click', closeDropdownOnOutsideClick);
@@ -33,7 +79,7 @@ const DynamicMenu = () => {
     return () => {
       document.removeEventListener('click', closeDropdownOnOutsideClick);
     };
-  }, [closeDropdownOnOutsideClick]);
+  }, [closeDropdownOnOutsideClick, openMoreOptions]);
 
   return (
     <div className="dynamic-menu">
@@ -44,20 +90,23 @@ const DynamicMenu = () => {
             alt=""
             className="logo"
           />
-          <span className="logo-text">E-COMM</span>
+          <span className={`logo-text ${window.innerWidth <= 768 ? 'small' : ''}`}>E-COMM</span>
         </div>
 
-        <div className="items">
+        <div className={`items menu-container ${window.innerWidth <= 768 ? '' : 'hidden'}`}>
           <ul className="menu-container">
             {menuItems.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index} onClick={() => toggleMoreOptions(item)}>
+                {item}
+                {selectedItem === item && <Icon icon="mdi:tick" className="tick-icon" />}
+              </li>
             ))}
           </ul>
         </div>
 
         <div className="dropdown-container" onClick={() => toggleMoreOptions(selectedItem)} ref={dropdownRef}>
-          <div className="dropdown-main-text">MORE</div>
-          <Icon icon="bi:chevron-down" className="dropdown-icon" />
+          <div className={`dropdown-main-text ${window.innerWidth <= 768 ? '' : 'visible'}`}>MORE</div>
+          <Icon icon="bi:chevron-down" className={`dropdown-icon ${window.innerWidth <= 768 ? 'visible' : ''}`} />
 
           <ul className={`dropdown-list ${openMoreOptions ? 'visible' : ''}`}>
             {moreOptions.map((option, index) => (

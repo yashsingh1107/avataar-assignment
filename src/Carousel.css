@@ -1,113 +1,230 @@
 /* Carousel.css */
 
 .carousel-frame {
-    width: 1534px;
-    height: 300px;
-    top: 205px;
-    margin: 20px auto;
-    border: none;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  width: 1534px;
+  height: 300px;
+  top: 205px;
+  margin: 20px auto;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.central-card,
+.subframe-1,
+.subframe-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.5s ease-in-out;
+}
+
+.central-card {
+  width: 500px;
+  height: 300px;
+  z-index: 2; /* Higher z-index than subframes for the central card */
   
-  .central-card,
-  .subframe-1,
-  .subframe-2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .central-card {
-    width: 500px;
-    height: 300px;
-    z-index: 2; /* Higher z-index than subframes for the central card */
+}
+
+.subframe-1,
+.subframe-2 {
+  width: 1000px;
+  height: 200px;
+}
+
+.subframe-1 {
+  z-index: 1;
+}
+
+.subframe-2 {
+  width: 1400px;
+  height: 140px;
+  z-index: 0;
+}
+
+.card-container-left,
+.card-container-right {
+  width: 380px;
+  height: 200px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.subframe-2 .card-container-left,
+.subframe-2 .card-container-right {
+  width: 220px;
+  height: 140px;
+}
+
+/* styles for navigation buttons */
+.navigation-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* spacing between buttons */
+.navigation-buttons button {
+  margin: 0;
+}
+
+/* styles for arrow buttons */
+.arrow-button {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.arrow-button.left {
+  background-image: url('./images/arrowLeft.png');
+}
+
+.arrow-button.right {
+  background-image: url('./images/arrowRight.png');
+}
+
+/*  styles for dot indicators */
+.dot-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dot-indicator.active {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .carousel-frame {
+    top: 711px;
     
   }
-  
-  .subframe-1,
-  .subframe-2 {
-    width: 1000px;
-    height: 200px;
-  }
-  
-  .subframe-1 {
-    z-index: 1;
-  }
-  
-  .subframe-2 {
-    width: 1400px;
-    height: 140px;
-    z-index: 0;
-  }
-  
-  .card-container-left,
-  .card-container-right {
-    width: 380px;
-    height: 200px;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .subframe-2 .card-container-left,
-  .subframe-2 .card-container-right {
-    width: 220px;
-    height: 140px;
-  }
-  
-  /* styles for buttons */
+
   .navigation-buttons {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    position: relative;
+    top: 800px;
+    transform: translateX(102%);
   }
-  
-  /* spacing between buttons */
+
   .navigation-buttons button {
-    margin: 0;
+    width: 80px; /* Adjust the width as needed */
+    height: 80px; /* Adjust the height as needed */
+    
+    
   }
-  
-  /* styles for arrow buttons */
-  .arrow-button {
-    width: 30px;
-    height: 30px;
-    background-size: cover;
-    border: none;
-    cursor: pointer;
-    background-color: white;
-  }
-  
+
   .arrow-button.left {
     background-image: url('./images/arrowLeft.png');
+    width: 50%;
+    padding-right: 80px;
+    padding-left: 10px;
   }
-  
+
   .arrow-button.right {
     background-image: url('./images/arrowRight.png');
+    width: 50%;
+    padding-right: 80px;
+    padding-left: 10px;
   }
-  
-  /*  styles for dot indicators */
+
   .dot-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #bbb;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    padding-left: 50px;
   }
-  
-  .dot-indicator.active {
-    background-color: #333;
+}
+
+/* medium screens */
+
+@media (min-width: 769px) and (max-width: 1530px) {
+  .carousel-frame {
+    top: 750px;
+    left: 40%;
+    width: 2000px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
   }
-  
+
+  .central-card {
+    width: 800px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+  }
+
+  .subframe-1 {
+    width: 1400px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+  }
+
+  .subframe-2 {
+    width: 1900px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+  }
+
+  .subframe-2 .card-container-left,
+  .subframe-2 .card-container-right {
+    width: 440px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    top: 20px;
+  }
+
+  .card-container-left,
+  .card-container-right {
+    width: 480px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+  }
+
+  .navigation-buttons {
+    position: relative;
+    top: 900px;
+    left: 150%;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navigation-buttons button {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+  }
+
+  .arrow-button.left {
+    background-image: url('./images/arrowLeft.png');
+    width: 30px;
+    height: 50px;
+    padding-right: 50px;
+    
+  }
+
+  .arrow-button.right {
+    background-image: url('./images/arrowRight.png');
+    width: 30px;
+    height: 50px;
+    padding-left: 50px;
+  }
+
+  .dot-indicator {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    padding-left: 50px;
+  }
+}
+

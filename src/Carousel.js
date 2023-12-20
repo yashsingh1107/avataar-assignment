@@ -13,7 +13,7 @@ const Carousel = () => {
   const [currentCard, setCurrentCard] = useState(1);
 
   useEffect(() => {
-    // Set the initial placement of images
+    // Setting the initial placement of images
     setCurrentCard(1);
     const interval = setInterval(() => {
       handleNext();
