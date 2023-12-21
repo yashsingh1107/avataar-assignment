@@ -88,15 +88,15 @@ li {
 /*styles for the tick icon */
 .tick-icon {
   position: absolute;
-  top: 50%;
-  right: 10px; /* Adjusting the right position as needed */
-  transform: translateY(-50%);
+  
   display: none;
   color: green; /* Set the color of the tick */
 }
 
 .dropdown-list-item.selected .tick-icon {
   display: inline-block;
+  position: relative; /* Override the fixed position */
+  left: 40px; /* Adjust the position for the selected item */
 }
 
 .search {
