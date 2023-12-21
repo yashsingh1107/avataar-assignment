@@ -25,6 +25,7 @@ const DynamicMenu = () => {
     (event) => {
       if (openMoreOptions && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setOpenMoreOptions(false);
+        setSelectedItem(null);
       }
     },
     [openMoreOptions]
