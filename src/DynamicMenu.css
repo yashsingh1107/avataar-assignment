@@ -148,7 +148,7 @@ li {
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
   .dynamic-menu {
-    width: 500%; /* Adjust the width for smaller screens */
+    width: 460%; /* Adjust the width for smaller screens */
     background-color: #2F302C;
     height: 200px; /* Set height to auto for varying content */
     padding-left: 0px; /* Adjust the left padding as needed */
@@ -217,6 +217,17 @@ li {
 
   .search{
     margin-top: 50px;
+    margin-right: 10%;
+    width: 30%;
+  }
+
+  .search-box {
+    font-size: 50px;
+  }
+
+  .search-icon{
+    width: 40px;
+    height: 40px;
   }
 }
 

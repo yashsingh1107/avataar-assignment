@@ -111,41 +111,47 @@
   background-color: #333;
 }
 
-@media (max-width: 768px) {
+/* for small screens */
+
+@media (max-width: 767px) {
   .carousel-frame {
-    top: 711px;
-    
+    position: absolute;
+    left: 30%;
+    top: 60rem;
+   
   }
 
   .navigation-buttons {
-    position: relative;
-    top: 800px;
-    transform: translateX(102%);
+    position: absolute;
+    top: 90rem;
+    transform: translate(80%,50%);
+    display: flex;
+    align-items: center;
   }
 
   .navigation-buttons button {
-    width: 80px; /* Adjust the width as needed */
-    height: 80px; /* Adjust the height as needed */
+    width: 50px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
     
     
   }
 
   .arrow-button.left {
     background-image: url('./images/arrowLeft.png');
-    width: 50%;
+    width: 5%;
     padding-right: 80px;
     padding-left: 10px;
   }
 
   .arrow-button.right {
     background-image: url('./images/arrowRight.png');
-    width: 50%;
+    width: 5%;
     padding-right: 80px;
     padding-left: 10px;
   }
 
   .dot-indicator {
-    width: 40px; /* Adjust the width as needed */
+    width: 5%; /* Adjust the width as needed */
     height: 40px; /* Adjust the height as needed */
     padding-left: 50px;
   }
@@ -153,7 +159,7 @@
 
 /* medium screens */
 
-@media (min-width: 769px) and (max-width: 1530px) {
+@media (min-width: 768px) and (max-width: 1530px) {
   .carousel-frame {
     top: 750px;
     left: 40%;
@@ -227,4 +233,3 @@
     padding-left: 50px;
   }
 }
-
