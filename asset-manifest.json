@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/avataar-assignment/static/css/main.ba00db81.css",
-    "main.js": "/avataar-assignment/static/js/main.cad279ae.js",
+    "main.js": "/avataar-assignment/static/js/main.29d5058b.js",
     "static/js/787.62a1464b.chunk.js": "/avataar-assignment/static/js/787.62a1464b.chunk.js",
     "index.html": "/avataar-assignment/index.html",
     "main.ba00db81.css.map": "/avataar-assignment/static/css/main.ba00db81.css.map",
-    "main.cad279ae.js.map": "/avataar-assignment/static/js/main.cad279ae.js.map",
+    "main.29d5058b.js.map": "/avataar-assignment/static/js/main.29d5058b.js.map",
     "787.62a1464b.chunk.js.map": "/avataar-assignment/static/js/787.62a1464b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ba00db81.css",
-    "static/js/main.cad279ae.js"
+    "static/js/main.29d5058b.js"
   ]
 }
